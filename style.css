@@ -9,6 +9,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      /* text-decoration: none; */
       scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -27,6 +28,8 @@
       z-index: 1000;
     }
     header h1 { font-size: 1.4rem; }
+    header a.logo { color: var(--white); text-decoration: none; }
+    header a.logo:hover { color: var(--accent); }
     nav ul { list-style: none; display: flex; gap: 20px; }
     nav a {
       text-decoration: none;
@@ -43,8 +46,10 @@
       top: 0; right: -100%;
       width: 250px; height: 100vh;
       background: var(--primary);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      display: flex; 
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
       gap: 30px;
       transition: 0.4s ease;
     }
