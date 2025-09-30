@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analyst Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Vtech</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <i class="ri-menu-line hamburger"></i>
+  </header>
+
+  <!-- Hamburger menu -->
+  <div class="nav-menu" id="menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h2>Hello, I'm Val Attoh</h2>
+      <p>A passionate Data Analyst skilled in uncovering insights from data and transforming them into impactful business solutions.</p>
+      <a href="cv.pdf" download><button class="btn">Download CV</button></a>
+    </div>
+    <img src="images/profile.png" alt="Data Analyst">
+  </section>
+
+<!-- About -->
+<section class="section" id="about">
+<h2>About Me</h2>
+<p>
+    I am a results-driven <strong>Data Analyst</strong> with a passion for turning complex datasets into clear, actionable insights. 
+    With expertise in <strong>SQL, Python, Excel, Power BI, and Tableau</strong>, I specialize in helping organizations make data-driven 
+    decisions that improve efficiency and growth. 
+</p>
+<p>
+    Over the years, I’ve worked on projects ranging from <em>sales forecasting</em> and <em>customer segmentation</em> to <em>interactive dashboards</em> 
+    that empower stakeholders with real-time information. I combine strong analytical skills with clear communication, ensuring that data 
+    insights are not only accurate but also easy to understand and implement.
+</p>
+<p>
+    I thrive at the intersection of <strong>data and strategy</strong> — transforming raw numbers into stories that drive innovation and success. 
+    Beyond technical skills, I bring adaptability, attention to detail, and a collaborative spirit to every project I take on.
+</p>
+</section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Sales Dashboard</h3>
+        <p>Designed a Power BI dashboard analyzing sales performance across regions.</p>
+      </div>
+      <div class="card">
+        <h3>Customer Segmentation</h3>
+        <p>Applied clustering techniques to group customers and improve targeting.</p>
+      </div>
+      <div class="card">
+        <h3>Predictive Model</h3>
+        <p>Built a regression model to forecast demand and optimize inventory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-box">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+      <a href="#"><i class="ri-github-fill"></i></a>
+      <a href="#"><i class="ri-twitter-fill"></i></a>
+    </div>
+    <p>&copy; 2025 John Doe. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop"><i class="ri-arrow-up-s-line"></i></button>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        hamburger.classList.remove('ri-close-line');
+        hamburger.classList.add('ri-menu-line');
+      } else {
+        menu.classList.add('active');
+        hamburger.classList.remove('ri-menu-line');
+        hamburger.classList.add('ri-close-line');
+      }
+    });
+    // Close when clicking outside (ignore clicks on hamburger)
+    document.addEventListener('click', (e) => {
+      if (
+        menu.classList.contains('active') &&
+        !menu.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        menu.classList.remove('active');
+        hamburger.classList.remove('ri-close-line');
+        hamburger.classList.add('ri-menu-line');
+      }
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 1000) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dummy form submission (no backend yet)
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Message sent successfully! (Backend integration required)');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
