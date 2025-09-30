@@ -47,6 +47,12 @@
       gap: 30px;
       transition: 0.4s ease;
     }
+    .nav-menu a {
+        text-decoration: none;
+        color: var(--white);
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
     .nav-menu.active { right: 0; }
     .close-btn {
       position: absolute;
@@ -193,7 +199,7 @@
       .section h2 {margin-bottom: 20px;}
       .hero { flex-direction: column-reverse; text-align: center; padding: 100px 10% 0; }
       .hero img { width: 310px; margin-bottom: 20px; }
-        .section{padding: 50px 5% 0;}
+        .section{padding: 60px 5% 0;}
         .contact-box {margin-bottom: 80px;}
     }
 
