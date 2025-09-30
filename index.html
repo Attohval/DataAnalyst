@@ -138,6 +138,17 @@
       }
     });
 
+    // Close menu when clicking any nav link
+    const menuLinks = menu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.remove('active');
+        hamburger.classList.remove('ri-close-line');
+        hamburger.classList.add('ri-menu-line');
+      });
+    });
+
     // Back to top
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
